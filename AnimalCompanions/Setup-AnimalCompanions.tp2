@@ -8,15 +8,16 @@ ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/handle_charsets.tpa~
 
   // No exception, everything needs to be converted
-  ACTION_DEFINE_ARRAY UBPnoconvert BEGIN END
+  ACTION_DEFINE_ARRAY UBPnoconvert UBRPET END
 
   // UBRPET.tra needs to be reloaded?
-  ACTION_DEFINE_ARRAY UBPreload BEGIN UBRPET END
+  ACTION_DEFINE_ARRAY UBPreload BEGIN END
 
   // There is no "language" folder so the root of all languages is %MOD_FOLDER%
   LAF HANDLE_CHARSETS
     INT_VAR
       infer_charset = 1
+	  from_utf8 = 1
     STR_VAR
       tra_path = EVAL ~%MOD_FOLDER%/translations~
 	  noconvert_array = UBPnoconvert
@@ -29,6 +30,7 @@ LANGUAGE ~Deutsch~ ~german~ ~AnimalCompanions/translations/german/UBRPET.tra~
 LANGUAGE ~Francais] [translation by Gwendolyne~ ~french~ ~AnimalCompanions/translations/french/UBRPET.tra~
 LANGUAGE ~Polski] [translation by Cahir~ ~polish~ ~AnimalCompanions/translations/polish/UBRPET.tra~
 LANGUAGE ~Italiano] [translation by Alessandro Nosenzo, proofreading by Aedan~ ~italian~ ~AnimalCompanions/translations/italian/UBRPET.tra~
+LANGUAGE ~Chinese~ ~schinese~ ~AnimalCompanions/translations/schinese/UBRPET.tra~
 
 BEGIN ~Animal Companions For All Rangers (Optional: Druids)~ // Name Of This Component.
 
